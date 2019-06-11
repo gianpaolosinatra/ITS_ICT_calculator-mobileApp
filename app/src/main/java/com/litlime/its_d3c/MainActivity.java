@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     String operation = "";
     double val1 = 0;
     String txt2 = "";
+    //boolean opFlag = false; //da implementare con metodo, se un operatore è cliccato non si possono cliccare altri operatori ma soltanto l'= e dopo l'= risettare a false
 
 
     @Override
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"0");
-                txt2+=(txt1.getText());
+                txt2+=("0");
             }
         });
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"1");
-                txt2+=(txt1.getText());
+                txt2+=("1");
             }
         });
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"2");
-                txt2+=(txt1.getText());
+                txt2+=("2");
             }
         });
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"3");
-                txt2+=(txt1.getText());
+                txt2+=("3");
             }
         });
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"4");
-                txt2+=(txt1.getText());
+                txt2+=("4");
             }
         });
 
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"5");
-                txt2+=(txt1.getText());
+                txt2+=("5");
             }
         });
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"6");
-                txt2+=(txt1.getText());
+                txt2+=("6");
             }
         });
 
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"7");
-                txt2+=(txt1.getText());
+                txt2+=("7");
             }
         });
 
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"8");
-                txt2+=(txt1.getText());
+                txt2+=("8");
             }
         });
 
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txt1.setText(txt1.getText()+"9");
-                txt2+=(txt1.getText());
+                txt2+=("9");
             }
         });
 
@@ -144,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 operation = "+";
                 //val1 = Double.parseDouble(txt1.getText().toString());
-                //txt1.setText(txt1.getText()+"+");
-                txt1.setText("");
+                txt1.setText(txt1.getText()+"+");
+
                 val1 = Double.parseDouble(txt2);
                 txt2="";
             }
@@ -157,7 +158,12 @@ public class MainActivity extends AppCompatActivity {
         op_sub.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                operation = "-";
+                //val1 = Double.parseDouble(txt1.getText().toString());
                 txt1.setText(txt1.getText()+"-");
+
+                val1 = Double.parseDouble(txt2);
+                txt2="";
             }
         });
 
@@ -167,7 +173,12 @@ public class MainActivity extends AppCompatActivity {
         op_mul.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                operation = "*";
+                //val1 = Double.parseDouble(txt1.getText().toString());
                 txt1.setText(txt1.getText()+"x");
+
+                val1 = Double.parseDouble(txt2);
+                txt2="";
             }
         });
 
@@ -177,7 +188,12 @@ public class MainActivity extends AppCompatActivity {
         op_div.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                operation = "/";
+                //val1 = Double.parseDouble(txt1.getText().toString());
                 txt1.setText(txt1.getText()+"/");
+
+                val1 = Double.parseDouble(txt2);
+                txt2="";
             }
         });
 
@@ -187,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
         op_cancel.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                txt2="";
                 txt1.setText("");
                 val1= 0;
             }
@@ -238,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
                 res = val1/val2;
         }
         Log.i("res= ", Double.toString(res));
+
         return Double.toString(res);
     }
 
